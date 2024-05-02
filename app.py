@@ -1,11 +1,5 @@
-# You can find this code for Chainlit python streaming here (https://docs.chainlit.io/concepts/streaming/python)
 
-# OpenAI Chat completion
-import os
-from openai import AsyncOpenAI  # importing openai for API usage
-import chainlit as cl  # importing chainlit for our app
-from chainlit.prompt import Prompt, PromptMessage  # importing prompt tools
-from chainlit.playground.providers import ChatOpenAI  # importing ChatOpenAI tools
+import chainlit as cl
 from dotenv import load_dotenv
 import utils
 
@@ -15,6 +9,7 @@ load_dotenv()
 
 @cl.on_chat_start
 async def start_chat():
+    # Create the RAQA chain and store it in the user session
     raqa_chain = utils.create_raqa_chain_from_docs()
     settings = {
         "chain": raqa_chain
