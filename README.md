@@ -1,3 +1,6 @@
+
+This repository contains a LangChain implementation of a RAG question-answer pipeline for PDF documents.
+
 ---
 title: RAG QA PDF
 emoji: 📊
